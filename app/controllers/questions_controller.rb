@@ -10,6 +10,10 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def import
+    Question.import(params[:file])
+    redirect_to root_url, notice: "Question imported."
+  end
   # GET /questions/1 or /questions/1.json
   def show
   end
